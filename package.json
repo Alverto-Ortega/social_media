@@ -2,7 +2,7 @@
   "name": "simple-setup",
   "version": "1",
   "description": "simple setup skeleton",
-  "main": "index.js",
+  "main": "template.js",
   "repository": "https://github.com/ortega361/social_media.git",
   "author": "Beto <ortega361@github.com>",
   "license": "MIT",
