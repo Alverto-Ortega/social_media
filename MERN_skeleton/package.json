@@ -1,0 +1,7 @@
+{
+  "name": "backend-skeleton",
+  "version": "1",
+  "description": "backend MERN skeleton",
+  "main": "index.js",
+  "license": "MIT"
+}
