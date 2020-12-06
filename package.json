@@ -1,7 +1,7 @@
 {
-  "name": "raw-space",
+  "name": "simple-setup",
   "version": "1",
-  "description": "Social Media for the free thinkers",
+  "description": "simple setup skeleton",
   "main": "index.js",
   "repository": "https://github.com/ortega361/social_media.git",
   "author": "Beto <ortega361@github.com>",
