@@ -1,0 +1,13 @@
+{
+    "presets": [ //transpile laters js syntax w/ support for code in node.js and react/jsx code.
+        ["@babel/preset-env",
+        {
+            "targets": {
+                "node": "current"
+            }
+        }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": ["react-hot-loader/babel"] //required to compile react components
+}
