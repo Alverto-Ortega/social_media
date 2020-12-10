@@ -6,7 +6,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import Template from './../template';
 import userRoutes from './routes/user.routes';
-
+import authRoutes from './routes/auth.routes';
 
 const app = express();
     /*..configure express to accept HTTP requests ... */
@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
     res.status(200).send(Template());
 });
 
-
+//mount,makes routes defined in auth.routes.js accessible from client side
 app.use('/', userRoutes);
-
+app.use('/', authRoutes);
 
 export default app;
     
