@@ -9,16 +9,16 @@ const getErrorMessage = (err) => {
                 message = getUniqueErrorMessage(err);
                 break;
             default:
-                message: "Something went wrong";
+                message = "Something went wrong";
         }
     }else{
         for(let errName in err.errors){
             if(err.errors[errName].message){
-                message = err.errors[errName].message
+                message = err.errors[errName].message;
             }
         }
     }
-    return message
+    return message;
 };
 //method to parse the UNIQUE constraint-related error object and construct an error message:
 const getUniqueErrorMessage = (err) => {
