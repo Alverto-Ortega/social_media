@@ -9,5 +9,5 @@ export default () => {
     <body>  \
         <div id="root">Hello world!!</div> \
     </body>  \
-    </html>'
+    </html>';
 };

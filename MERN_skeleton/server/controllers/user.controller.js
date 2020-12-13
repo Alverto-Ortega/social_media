@@ -1,7 +1,7 @@
 //callbacks to be executed whena route request is received by the server
 import User from '../models/user.model';
 import extend from 'lodash/extend';
-import errorHandler from './error.controller';
+import errorHandler from '../helpers/dbErrorHandler';
 
 //when express app gets a POST request at'api/users' it calls: 
 const create = async (req, res) => {

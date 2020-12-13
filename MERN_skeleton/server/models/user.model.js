@@ -1,5 +1,6 @@
 // USER MODEL IMPLEMENTATION
 import mongoose from 'mongoose';
+import crypto from 'crypto';
 
 const userSchema = new mongoose.Schema({
     //stores users name, etc..
@@ -20,13 +21,13 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    updated: Date,
+    updated: {type: Date},
     //encrypted user password used for authentication:
     hashed_password: {
         type: String,
         required: "Password is required"
     },
-    salt: String
+    salt: {type: String}
 });
 //handle password string as virtual field
 userSchema.virtual('password').set(function(password){
@@ -75,6 +76,6 @@ userSchema.path('hashed_password').validate(function(v){
 
 
 //user model  exported to be used by the rest of backend code
+//now we can use this user model to extend backend functionality...
 export default mongoose.model('User', userSchema);
 
-//now we can use this user model to extend backend functionality...
