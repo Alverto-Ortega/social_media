@@ -8,6 +8,8 @@ export default () => {
     </head> \
     <body>  \
         <div id="root">Hello world!!</div> \
+        <script type="text/javascript" src"/dist/bundle.js"></script> \
     </body>  \
     </html>';
 };
+//script tag loads REACT frontend code in browser when visiting root URL"/" with server running
