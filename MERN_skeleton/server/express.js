@@ -11,6 +11,10 @@ import devBundle from "./devBundle";
 import path from 'path';
 
 const app = express();
+
+//import middle , client-side webpack config, initiatie webpack to compile and bundle client-side code and enable hot reloading.
+//bundles code with be places in dist folder, which willl be needed to render views.
+devBundle.compile(app); //only use when in development, otherwise comment out
     /*..configure express to accept HTTP requests ... */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -20,6 +24,12 @@ app.use(cookieParser());
 app.use(compress());
 app.use(helmet());
 app.use(cors());
+
+//config to serve static files from dist folder
+const CURRENT_WORKING_DIR = process.cwd();
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
+
+
 //send it in the response to a GET request for the / route
 app.get('/', (req, res) => {
     res.status(200).send(Template());
@@ -38,13 +48,9 @@ app.use((err, req, res, next) => {
         console.log(err);
     }
 });
-//import middle , client-side webpack config, initiatie webpack to compile and bundle client-side code and enable hot reloading.
-//bundles code with be places in dist folder, which willl be needed to render views.
-devBundle.compile(app); //only use when in development, otherwise comment out
 
-//config to serve static files from dist folder
-const CURRENT_WORKING_DIR = process.cwd();
-app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
+
+
 
 export default app;
     

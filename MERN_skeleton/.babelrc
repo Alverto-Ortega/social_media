@@ -7,11 +7,8 @@
             }
         }
         ],
-    //to compile react,include the module and config react hot loader babel plugin...
+
         "@babel/preset-react"
     ],
     "plugins": ["react-hot-loader/babel"]
 }
-
-//The above module converts ES6+ into older versions of js for Node version compatibility 
-//and compiles client-side.
