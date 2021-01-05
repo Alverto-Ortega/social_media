@@ -5,6 +5,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import forestImg from './../assets/images/forest.jpg';
+import {  Link} from "react-router-dom";
+
 //components will follow code structure:
 //imports of libraries, modules, files needed to construct the componenet
 //style declarations for componenet elements
@@ -32,6 +34,7 @@ const useStyles = makeStyles(theme => ({
 //component function definition aka React components
 export default function Home(){
     const classes = useStyles();
+    
     return(
         <Card className={classes.card}>
             <Typography variant="h6" className={classes.title}>
@@ -41,8 +44,14 @@ export default function Home(){
             <CardContent>
                 <Typography  variant="body2" component="p">
                     Welcome to the RawSpace home page.
+                    
                 </Typography>
+                <Link to = "/users">Users</Link>
             </CardContent>
+            
         </Card>
+        
+        
     )
+    
 };
